@@ -29,23 +29,6 @@ from ast import Continue
 import math
 from scipy.special import ellipk, ellipe #first and second kind
 
-#Not used packages
-#from sklearn.linear_model import LinearRegression
-#from sklearn.neural_network import MLPRegressor
-#from sklearn.model_selection import train_test_split
-#from sklearn.linear_model import RidgeCV, LinearRegression
-#from sklearn.compose import TransformedTargetRegressor
-#from sklearn.preprocessing import normalize, StandardScaler, QuantileTransformer, quantile_transform, MinMaxScaler
-#from sklearn.metrics import ConfusionMatrixDisplay, matthews_corrcoef, classification_report
-#from sklearn.decomposition import PCA
-#from sklearn import cluster
-#from sklearn.cluster import KMeans
-#from sklearn.svm import SVC
-#from sklearn.multioutput import MultiOutputClassifier
-#from os.path import exists
-#from sklearn.model_selection import train_test_split
-#from sklearn.preprocessing import StandardScaler, MinMaxScaler
-
 #Parser to read the pdbstructure
 parser = PDB.PDBParser()
 
@@ -53,11 +36,6 @@ np.random.seed(10)
 
 #Test for the training set. Tupple with PDB name and BMRB code. PDB and BMRB are stored at /orozco/projects/NMR_i-motif/CSML/model_QM/models/Iexp_a1r1N120_ownatoms_unpdb_totalclean/NMRStar
 #Just the chemical shifts with C well calibrated.
-combine = [('1KKA', 5256), ('1L1W', 5321), ('1LC6',5371), ('1LDZ', 4226), ('1NC0', 5655), ('1OW9', 5852), ('1PJY', 5834), ('1R7W', 6076), 
-('1R7Z',6077), ('1YSV',6077), ('2FDT', 10018), ('2GM0', 7098), ('2JXQ', 15571), ('2JXS', 15572), ('2K3Z', 15780), ('2K41',15781), ('2KOC', 5705), 
-('2KYD',16980), ('2LBL', 17565), ('2LBJ', 17565), ('2LDL', 17671), ('2LDT', 17682), ('2LHP', 17682), ('2LI4', 17877), ('2LK3', 17972), 
-('2LP9', 18239), ('2LPA',18240), ('2LU0', 18503), ('2LUB', 18515), ('2LV0', 18549), ('2RN1', 11014), ('2Y95', 16714), ('4A4S', 18036), 
-('4A4T', 18034), ('4A4U', 18035)] 
 
 #Test for training without 2KYD. For some unkowned reason this structure fails in the calculation of the ring current.
 combine = [('1KKA', 5256), ('1L1W', 5321), ('1LC6',5371), ('1LDZ', 4226), ('1NC0', 5655), ('1OW9', 5852), ('1PJY', 5834), ('1R7W', 6076), 
@@ -65,8 +43,6 @@ combine = [('1KKA', 5256), ('1L1W', 5321), ('1LC6',5371), ('1LDZ', 4226), ('1NC0
 ('2LBL', 17565), ('2LBJ', 17565), ('2LDL', 17671), ('2LDT', 17682), ('2LHP', 17682), ('2LI4', 17877), ('2LK3', 17972), 
 ('2LP9', 18239), ('2LPA',18240), ('2LU0', 18503), ('2LUB', 18515), ('2LV0', 18549), ('2RN1', 11014), ('2Y95', 16714), ('4A4S', 18036), 
 ('4A4T', 18034), ('4A4U', 18035)] 
-
-combine = [('1KKA', 5256), ('1L1W', 5321)]
 
 #Test for the training set.
 combine_test = [('1XHP', 6320), ('1Z2J', 6543), ('1ZC5', 6633), ('2JWV', 15538),
